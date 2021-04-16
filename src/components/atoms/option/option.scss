@@ -30,24 +30,24 @@
     label:hover{
         background: $yellow;
         color: $white;
-        border: none;
+        border-color: $yellow;
     }
 
     
     input[type='radio']:checked + label{
         background: $yellow;
         color: $white;
-        border: none;
+        border-color: $yellow;
     }
     .correct{
         background: $green !important;
-        border: none;
+        border-color: $green  !important;
         color: $white;
     }
 
     .failed{
         background: $red !important;
-        border: none;
+        border-color: $red  !important;
         color: $white;
     }
 
