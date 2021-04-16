@@ -1,0 +1,54 @@
+@import '../../../style/variables.scss';
+
+.a-option{
+    width: 100%;
+    padding: 10px 0px;
+
+    label{
+        width: 100%;
+        border: 1px solid $purble;
+        padding: 10px 0px;
+        border-radius: 12px;
+        color: $purble;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-end;
+        transition: all 0.3s;
+
+        span{
+            margin-left: 46px;
+            font-size: 18px;
+            line-height: 27px;
+        }
+    }
+
+    input[type='radio']{
+        display: none;
+    }
+
+    label:hover{
+        background: $yellow;
+        color: $white;
+        border: none;
+    }
+
+    
+    input[type='radio']:checked + label{
+        background: $yellow;
+        color: $white;
+        border: none;
+    }
+    .correct{
+        background: $green !important;
+        border: none;
+        color: $white;
+    }
+
+    .failed{
+        background: $red !important;
+        border: none;
+        color: $white;
+    }
+
+}

@@ -1,0 +1,13 @@
+@import '../../../style/variables.scss';
+
+.o-button{
+    min-width: 100px;
+    padding: 10px 10px;
+    border-radius: 12px;
+    text-decoration: none;
+    background: $yellow;
+    color: $white;
+    font-size: 18px;
+    line-height: 27px;
+
+}
