@@ -16,6 +16,7 @@ const AskName  = props => {
     const [cargarPaises, setCargarPaises] = useState(1);
     const [cambiarPalabra, setCambiarPalabra] = useState(0);
     const [checked, setChecked] = useState(false);
+    const [disabled, setDisabled] = useState("");
     const [puntaje, setPuntaje] = useState(0);
 
     const letters = ['A','B','C','D'];
@@ -100,6 +101,7 @@ const AskName  = props => {
             setRespuestas(respuestas);
             setCambiarPalabra(0);
             setoptionSelected("");
+            setDisabled("");
             setChecked(false);
             return () => {
             }
@@ -121,6 +123,7 @@ const AskName  = props => {
                                 option={item.capital} 
                                 action={() => {setoptionSelected(item.capital); }} 
                                 value={item.capital}
+                                disabled={disabled}
                                 checked={optionSelected === item.capital ? true:checked}
                                 className={ item.className ? item.className :"" }
                                 letter={letters[key]}
@@ -131,9 +134,9 @@ const AskName  = props => {
                     <div className="o-card-footer">
                         {
                             cambiarPalabra === 2 ?
-                                <Button type="button" text="Proxima" link={optionSelected} action={ ()=>setCambiarPalabra(1) } />:
+                                <Button type="button" text="Proxima" link={optionSelected} action={ ()=> setCambiarPalabra(1) } />:
                                 cargar === 2 ? 
-                                <Button type="button" text="Validar" link={optionSelected} action={ ()=>setcargar(1) } />:
+                                <Button type="button" text="Validar" link={optionSelected} action={ ()=> { setcargar(1); setDisabled("disabled"); } } />:
                                 <Button type="button" text="Ver resultados" link={optionSelected} action={ ()=>setcargar(3) } />
                         }
                     </div>

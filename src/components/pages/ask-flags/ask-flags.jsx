@@ -17,6 +17,7 @@ const AskName  = props => {
     const [cambiarPalabra, setCambiarPalabra] = useState(0);
     const [checked, setChecked] = useState(false);
     const [puntaje, setPuntaje] = useState(0);
+    const [disabled, setDisabled] = useState("");
 
     const letters = ['A','B','C','D'];
 
@@ -101,6 +102,7 @@ const AskName  = props => {
             setCambiarPalabra(0);
             setoptionSelected("");
             setChecked(false);
+            setDisabled("");
             return () => {
             }
         }
@@ -121,6 +123,7 @@ const AskName  = props => {
                                 option={item.name} 
                                 action={() => {setoptionSelected(item.name); }} 
                                 value={item.name}
+                                disabled={disabled}
                                 checked={optionSelected === item.name ? true:checked}
                                 className={ item.className ? item.className :"" }
                                 letter={letters[key]}
@@ -131,9 +134,9 @@ const AskName  = props => {
                     <div className="o-card-footer">
                         {
                             cambiarPalabra === 2 ?
-                                <Button type="button" text="Proxima" link={optionSelected} action={ ()=>setCambiarPalabra(1) } />:
+                                <Button type="button" text="Proxima" link={optionSelected} action={ ()=> setCambiarPalabra(1) } />:
                                 cargar === 2 ? 
-                                <Button type="button" text="Validar" link={optionSelected} action={ ()=>setcargar(1) } />:
+                                <Button type="button" text="Validar" link={optionSelected} action={ ()=> { setcargar(1); setDisabled("disabled"); } } />:
                                 <Button type="button" text="Ver resultados" link={optionSelected} action={ ()=>setcargar(3) } />
                         }
                     </div>
