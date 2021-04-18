@@ -18,6 +18,10 @@
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         margin-top: 32px;
         margin-bottom: 17px;
+
+        .o-card-bandera{
+            width: 50px;
+        }
     }
 
     .o-card-img{
@@ -34,4 +38,32 @@
     .o-card-footer{
         margin: 15px 0px;
     }
+
+    .respuesta{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 72px;
+        /* identical to box height */
+        color: $darkBlue;
+    }
+
+    .respuesta-texto{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 27px;
+        color: $darkBlue;
+        
+        .respuesta-numero{
+            font-style: normal;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 27px;
+            color: $green;
+        }
+    }
+
+    
 }
